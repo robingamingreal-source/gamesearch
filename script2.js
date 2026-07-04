@@ -1,6 +1,8 @@
 const img = document.getElementById("mcimg");
 const playermsg = document.getElementById("Players")
 const ver = document.getElementById("Version")
+const error = document.getElementById("error")
+
 
 async function serverfetch() {
 
@@ -12,20 +14,22 @@ async function serverfetch() {
         img.src = `https://mc-api.co/v1/icon/${serveradress}`;
 
         if(!response.ok){
-            throw new Error("Error while fetching data");
+            const code = response.status;
+            throw new Error("Error while fetching data: " + code);
         }
-        
+        error.textContent = "";
         const data = await response.json();
         const online = data.players?.online ?? 0;
         const max = data.players?.max ?? 0;
-        const versi = data.version.name
+        const versi = data.version.name;
 
         console.log("Server Stats:", data); 
         playermsg.textContent = "Players: " + online + "/" + max;
-        ver.textContent = "Version: " + versi
+        ver.textContent = "Version: " + versi;
         
         
-    } catch(error) {
-        console.error("Fetch failed:", error);
+    } catch(err) {
+        console.error("Fetch failed:", err);
+        error.textContent = err.message || "Fetch failed";
     }
 }

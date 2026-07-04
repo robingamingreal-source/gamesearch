@@ -41,7 +41,7 @@ button:hover{
     background: rgba(0, 255, 213, 0.9);
 }
 img{
-    background-color: rgba(38, 38, 38, 0.466);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     transition: color 200ms ease, transform 500ms ease, box-shadow 200ms ease;
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
@@ -51,7 +51,7 @@ img:hover{
     z-index: 9999;
     transform: scale(1.5) translate(-2px) translateY(-10px);
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.8);
-    image-rendering: optimizeQuality, crisp-edges;
+    image-rendering: crisp-edges;
 
 }
 hr{
@@ -59,4 +59,31 @@ hr{
     height: 10px;
     border:solid;
     background: linear-gradient(to right, #ff4343, #7ee302);
+}
+.checkbox-button input[type="checkbox"] {
+    display: none;
+}
+
+
+.checkbox-button {
+    display: inline-block;
+    padding: 1px 15px;
+    border-radius: 10px;
+    background: rgba(1,1,1,0.2);
+    transition: color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+    cursor: pointer;
+    user-select: none;
+    border: solid;
+}
+
+
+.checkbox-button:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.9);
+}
+
+.checkbox-button input[type="checkbox"]:checked + span,
+.checkbox-button:has(input[type="checkbox"]:checked) {
+    background: rgba(0, 255, 200, 0.9);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5); 
 }

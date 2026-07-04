@@ -1,4 +1,5 @@
 const img = document.getElementById("Pokeimg");
+const shinycheck = document.getElementById("shiny-btn")
 
 
 async function pokefetch() {
@@ -11,11 +12,18 @@ async function pokefetch() {
         }
         const data = await response.json();
         const pokesrc = data.sprites.front_default;
+        const pokesrcshin = data.sprites.front_shiny;
         const stats = data.stats
-        img.src = pokesrc
+        if (shinycheck.checked) {
+            img.src = pokesrcshin
+        }
+        else {
+            img.src = pokesrc
+        }
         document.getElementById("weight-value").textContent = data.weight
         document.getElementById("name-value").textContent = data.name
         document.getElementById("pp-value").textContent = data.id
+        console.log(shinycheck)
     }
     catch(error){
         console.log(error)
