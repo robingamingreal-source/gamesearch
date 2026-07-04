@@ -28,17 +28,30 @@ button:hover{
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.9);
     background: rgba(0, 255, 213, 0.9);
 }
-#Pokeimg{
+#port{
+    border-radius: 10px;
+    border: none;
+    background: rgba(0, 255, 213, 0.2);
+    transition: color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+#port:focus{
+    transform: scale(1.1);
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.9);
+    background: rgba(0, 255, 213, 0.9);
+}
+img{
     background-color: rgba(38, 38, 38, 0.466);
     border-radius: 10px;
     transition: color 200ms ease, transform 500ms ease, box-shadow 200ms ease;
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
 }
-#Pokeimg:hover{
+img:hover{
     position: relative;
     z-index: 9999;
     transform: scale(1.5) translate(-2px) translateY(-10px);
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.8);
+    image-rendering: optimizeQuality, crisp-edges;
 
 }
 hr{
