@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(to left, #ff4343, #7ee302);
+    font-family: Arial, sans-serif;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+button{
+    border-radius: 10px;
+    background: rgba(1,1,1,0.2);
+    transition: color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.9);
+}
+#search-input{
+    border-radius: 10px;
+    border: none;
+    background: rgba(0, 255, 213, 0.2);
+    transition: color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+#search-input:focus{
+    transform: scale(1.1);
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.9);
+    background: rgba(0, 255, 213, 0.9);
+}
+#Pokeimg{
+    background-color: rgba(38, 38, 38, 0.466);
+    border-radius: 10px;
+    transition: color 200ms ease, transform 500ms ease, box-shadow 200ms ease;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+}
+#Pokeimg:hover{
+    position: relative;
+    z-index: 9999;
+    transform: scale(1.5) translate(-2px) translateY(-10px);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.8);
+
+}
+hr{
+    border-radius: 10px;
+    height: 10px;
+    border:solid;
+    background: linear-gradient(to right, #ff4343, #7ee302);
+}
